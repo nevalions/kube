@@ -1,5 +1,6 @@
 # clean previous configs
 # kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+# and probably allow 8443 port
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
