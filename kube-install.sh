@@ -36,7 +36,7 @@ sudo containerd config default | sed -e "s#SystemdCgroup = false#SystemdCgroup =
 systemctl restart containerd
 
 # optionally set internal ip for worker and plane
-sudo tee /etc/default/kubelet <<EOF                                                                             ✘ INT www@4188479-cg67573 14:54:04
+sudo tee /etc/default/kubelet <<EOF
 KUBELET_EXTRA_ARGS=--node-ip=192.168.0.6
 EOF
 
