@@ -9,11 +9,10 @@ nodeRegistration:
 ---
 apiVersion: kubeadm.k8s.io/v1beta3
 kind: ClusterConfiguration
-#controlPlaneEndpoint: "192.168.0.6:6443"  # Control plane endpoint
 apiServer:
   extraArgs:
-    advertise-address: "192.168.0.6"  # API server advertise address
-#  certSANs:
-#    - "87.249.54.49"  #Additional SANs for the API server certificate
+    advertise-address: "192.168.0.6"
+  certSANs:
+    - "87.249.54.49"
 networking:
-  podSubnet: "10.244.0.0/16"  # Pod network CIDR
+  podSubnet: "10.244.0.0/16"
