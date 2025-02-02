@@ -60,3 +60,22 @@ systemctl restart kubelet
 # kubeadm token create <generated-token> --print-join-command --ttl=0
 sudo kubeadm join hash
 
+
+# Install helm
+curl -LO https://get.helm.sh/helm-v3.17.0-linux-amd64.tar.gz
+tar -zxvf helm-v3.17.0-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/helm
+helm version
+# Add repos
+### helm repo add bitnami https://charts.bitnami.com/bitnami
+
+# Add nginx with helm on plain
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+
+helm install ingress-nginx ingress-nginx/ingress-nginx
+
+kubectl get pods -n default -l app.kubernetes.io/name=ingress-nginx
+
+# Install Cert-Manager:
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.16.3/cert-manager.yaml
