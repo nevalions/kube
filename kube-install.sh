@@ -73,7 +73,11 @@ helm version
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
 
+# default is LoadBalancer
 helm install ingress-nginx ingress-nginx/ingress-nginx
+# use for custom vds
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+  --set controller.service.type=NodePort
 
 kubectl get pods -n default -l app.kubernetes.io/name=ingress-nginx
 
