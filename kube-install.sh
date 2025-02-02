@@ -76,6 +76,8 @@ helm repo update
 
 # Add metallb for external ips
 helm install metallb metallb/metallb --namespace metallb-system --create-namespace
+# or direct
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.9/config/manifests/metallb-native.yaml
 
 # default is LoadBalancer
 helm install ingress-nginx ingress-nginx/ingress-nginx
