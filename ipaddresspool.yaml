@@ -1,3 +1,6 @@
+#
+# delete before applying kubectl delete validatingwebhookconfiguration metallb-webhook-configuration
+
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:

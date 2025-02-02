@@ -74,6 +74,9 @@ helm version
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
 
+# Add metallb for external ips
+helm install metallb metallb/metallb --namespace metallb-system --create-namespace
+
 # default is LoadBalancer
 helm install ingress-nginx ingress-nginx/ingress-nginx
 # use for custom vds
