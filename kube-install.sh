@@ -51,8 +51,8 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 # install cni flannel
 kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
 
-systemctl restart containerd
-systemctl restart kubelet
+sudo systemctl restart containerd
+sudo systemctl restart kubelet
 
 # !!!only on worker node
 # add worker nodes
