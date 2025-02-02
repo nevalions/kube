@@ -4,12 +4,12 @@ kind: InitConfiguration
 nodeRegistration:
   kubeletExtraArgs:
     resolv-conf: "/run/systemd/resolve/resolv.conf"  # Add the resolv-conf flag here
-    node-ip: "192.168.0.6,87.249.54.49"  # Specify both internal and external IPs
+#    node-ip: "192.168.0.6,87.249.54.49"  # Specify both internal and external IPs
 
 ---
 apiVersion: kubeadm.k8s.io/v1beta3
 kind: ClusterConfiguration
-controlPlaneEndpoint: "192.168.0.6:6443"  # Control plane endpoint
+#controlPlaneEndpoint: "192.168.0.6:6443"  # Control plane endpoint
 apiServer:
   extraArgs:
     advertise-address: "192.168.0.6"  # API server advertise address
