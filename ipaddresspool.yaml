@@ -9,3 +9,5 @@ metadata:
 spec:
   addresses:
   - 87.249.54.49/32
+  autoAssign: true
+  avoidBuggyIPs: false
