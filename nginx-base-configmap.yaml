@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nginx-config
+  name: nginx-core-config
   namespace: default
 data:
   nginx.conf: |
@@ -28,15 +28,5 @@ data:
         sendfile        on;
         keepalive_timeout  65;
 
-        include /etc/nginx/conf.d/*.conf;
-    
-        server {
-          listen 80;
-          server_name localhost;
-      
-          location / {
-              root /usr/share/nginx/html;
-              index index.html;
-          }
-        }
+        include /etc/nginx/conf.d/*.conf;  # This includes the separate server blocks
     }
