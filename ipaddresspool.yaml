@@ -8,6 +8,6 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-  - 185.233.187.194/32
+  - 213.171.10.112/32
   autoAssign: true
   avoidBuggyIPs: false
