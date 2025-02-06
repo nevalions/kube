@@ -8,7 +8,17 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-    - 213.171.10.112/32
-#  - 192.168.0.11/32
+#    - 213.171.10.112/32
+    - 192.168.0.100-192.168.0.120
   autoAssign: true
   avoidBuggyIPs: false
+
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: example
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+    - ipaddresspool
