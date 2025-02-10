@@ -1,7 +1,9 @@
 # https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 # install packages
-sudo apt-get update -y
+sudo apt-get update
+sudo apt-get upgrade -y
+
 sudo apt-get install -y apt-transport-https ca-certificates curl
 
 sudo mkdir -p /etc/apt/keyrings
@@ -11,6 +13,9 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo apt-get update -y
 sudo apt-get install -y kubelet kubeadm kubectl containerd
 sudo apt-mark hold kubelet kubeadm kubectl
+
+sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # activate specific modules
 # overlay — The overlay module provides overlay filesystem support, which Kubernetes uses for its pod network abstraction
@@ -33,7 +38,7 @@ sysctl -p /etc/sysctl.conf
 sudo mkdir -p /etc/containerd/
 sudo containerd config default | sed -e "s#SystemdCgroup = false#SystemdCgroup = true#g" | tee /etc/containerd/config.toml
 
-systemctl restart containerd
+sudo systemctl restart containerd
 
 # optionally set internal ip for worker and plane
 sudo tee /etc/default/kubelet <<EOF
@@ -58,7 +63,7 @@ sudo systemctl restart kubelet
 # !!!only on worker node
 # add worker nodes
 # kubeadm token generate
-# kubeadm token create <generated-token> --print-join-command --ttl=0
+# kubeadm token create ejr61c.v16chepuleltyqp9 --print-join-command --ttl=0
 sudo kubeadm join hash
 
 
@@ -89,4 +94,10 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.9/confi
 kubectl get pods -n default -l app.kubernetes.io/name=ingress-nginx
 
 # Install Cert-Manager:
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.16.3/cert-manager.yaml
+# first install crds
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.crds.yaml
+
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
+
+# Install Metrics
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
