@@ -17,3 +17,5 @@ apiServer:
 #    - "87.249.54.49"
 networking:
   podSubnet: "10.244.0.0/16"
+
+#  podSubnet: "10.244.0.0/16"
