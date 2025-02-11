@@ -1,10 +1,10 @@
-#---
-#apiVersion: kubeadm.k8s.io/v1beta3
-#kind: InitConfiguration
-#nodeRegistration:
-#  kubeletExtraArgs:
+---
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: InitConfiguration
+nodeRegistration:
+  kubeletExtraArgs:
 #    resolv-conf: "/run/systemd/resolve/resolv.conf"  # Add the resolv-conf flag here
-#    node-ip: "192.168.0.6"
+    node-ip: "192.168.0.6"
 
 ---
 apiVersion: kubeadm.k8s.io/v1beta3
