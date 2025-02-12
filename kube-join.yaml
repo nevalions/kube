@@ -1,0 +1,11 @@
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: JoinConfiguration
+discovery:
+  bootstrapToken:
+    apiServerEndpoint: 192.168.0.6:6443
+    token: "23pgsf.tyiwcy7h0vppgepy"
+    caCertHashes:
+      - "sha256:4dfeae3e18c1bc396ff7fd47e6b8844952358cae9c3a60af69ba48bd49fdbe78"
+nodeRegistration:
+  kubeletExtraArgs:
+    node-ip: 192.168.0.7
