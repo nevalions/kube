@@ -91,8 +91,14 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
 # Add metallb for external ips
 helm install metallb metallb/metallb --namespace metallb-system --create-namespace
 # or direct
+
+# crds first
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.6/manifests/crds.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml
+#any
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.9/config/manifests/metallb-native.yaml
-# use for custom vds
+
 
 kubectl get pods -n default -l app.kubernetes.io/name=ingress-nginx
 
@@ -104,3 +110,4 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 
 # Install Metrics
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+

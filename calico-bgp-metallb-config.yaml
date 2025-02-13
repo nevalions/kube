@@ -2,6 +2,7 @@ apiVersion: metallb.io/v1beta1
 kind: BGPConfiguration
 metadata:
   name: default
+  namespace: metallb-system
 spec:
   logLevel: info
   peers:
