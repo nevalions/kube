@@ -5,4 +5,5 @@ metadata:
 spec:
   asNumber: 64512
   logSeverityScreen: Info
-  nodeToNodeMeshEnabled: true
+
+#  nodeToNodeMeshEnabled: true
