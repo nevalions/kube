@@ -105,7 +105,6 @@ kubectl get pods -n default -l app.kubernetes.io/name=ingress-nginx
 # Install Cert-Manager:
 # first install crds
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.crds.yaml
-
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
 
 # Install Metrics
