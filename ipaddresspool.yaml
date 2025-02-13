@@ -12,16 +12,6 @@ spec:
   autoAssign: true
   avoidBuggyIPs: false
 
-#---
-#apiVersion: metallb.io/v1beta1
-#kind: L2Advertisement
-#metadata:
-#  name: ipadvert
-#  namespace: metallb-system
-#spec:
-#  ipAddressPools:
-#    - ipaddresspool
-
 ---
 apiVersion: metallb.io/v1beta1
 kind: BGPAdvertisement
@@ -31,3 +21,13 @@ metadata:
 spec:
   ipAddressPools:
     - ipaddresspool
+
+#---
+#apiVersion: metallb.io/v1beta1
+#kind: L2Advertisement
+#metadata:
+#  name: ipadvert
+#  namespace: metallb-system
+#spec:
+#  ipAddressPools:
+#    - ipaddresspool

@@ -92,8 +92,8 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
 helm install metallb metallb/metallb --namespace metallb-system --create-namespace
 # or direct
 
-# crds first
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.6/manifests/crds.yaml
+###crds first
+##kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.6/manifests/crds.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml
 #any
