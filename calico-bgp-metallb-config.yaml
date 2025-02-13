@@ -4,6 +4,6 @@ metadata:
   name: peer-1
   namespace: metallb-system
 spec:
-  peerASN: 64513
-  myASN: 64512
+  peerASN: 64512
+  myASN: 64513
   peerAddress: 192.168.0.13
