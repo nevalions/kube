@@ -5,5 +5,7 @@ metadata:
 spec:
   asNumber: 64512
   logSeverityScreen: Info
+  serviceLoadBalancerIps:
+    - cidr: 192.168.0.100-192.168.0.120
 
 #  nodeToNodeMeshEnabled: true
