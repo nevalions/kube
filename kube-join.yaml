@@ -7,5 +7,7 @@ discovery:
     caCertHashes:
       - "sha256:4dfeae3e18c1bc396ff7fd47e6b8844952358cae9c3a60af69ba48bd49fdbe78"
 nodeRegistration:
+  name: worker1
   kubeletExtraArgs:
     node-ip: 192.168.0.7
+    hostname-override: worker1
