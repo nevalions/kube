@@ -1,0 +1,25 @@
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  name: 4188479-cg67573
+spec:
+  bgp:
+    asNumber: 64512
+
+---
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  name: worker1
+spec:
+  bgp:
+    asNumber: 64512
+
+---
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  name: worker2
+spec:
+  bgp:
+    asNumber: 64512
