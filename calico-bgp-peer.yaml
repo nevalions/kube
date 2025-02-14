@@ -5,3 +5,21 @@ metadata:
 spec:
   peerIP: 192.168.0.13
   asNumber: 64512
+
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-worker1
+spec:
+  peerIP: 192.168.0.7
+  asNumber: 64512
+
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-worker2
+spec:
+  peerIP: 192.168.0.12
+  asNumber: 64512
