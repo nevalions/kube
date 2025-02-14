@@ -14,7 +14,7 @@ spec:
       encapsulation: None
       natOutgoing: Enabled
       nodeSelector: all()
-      serviceIPv4Pool: 10.96.0.0/16
+#      serviceIPv4Pool: 10.96.0.0/16
 
 ---
 
