@@ -12,15 +12,15 @@ spec:
   autoAssign: true
   avoidBuggyIPs: false
 
-#---
-#apiVersion: metallb.io/v1beta1
-#kind: BGPAdvertisement
-#metadata:
-#  name: bgp-advert
-#  namespace: metallb-system
-#spec:
-#  ipAddressPools:
-#    - ipaddresspool
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: bgp-advert
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+    - ipaddresspool
 
 #---
 #apiVersion: metallb.io/v1beta1
