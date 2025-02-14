@@ -14,6 +14,9 @@ spec:
       encapsulation: None
       natOutgoing: Enabled
       nodeSelector: all()
+    bgp:
+      enabled: true
+    serviceIPv4Pool: 10.96.0.0/16
 
 ---
 
