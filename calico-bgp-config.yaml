@@ -3,7 +3,7 @@ kind: BGPConfiguration
 metadata:
   name: default
 spec:
-  asNumber: 64512
+  asNumber: 64513
   logSeverityScreen: Info
   nodeToNodeMeshEnabled: false
   serviceLoadBalancerIPs:

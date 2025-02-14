@@ -4,7 +4,7 @@ metadata:
   name: bgppeer-external
 spec:
   peerIP: 192.168.0.13
-  asNumber: 64512
+  asNumber: 64513
 
 ---
 apiVersion: projectcalico.org/v3
@@ -13,7 +13,7 @@ metadata:
   name: bgppeer-worker1
 spec:
   peerIP: 192.168.0.7
-  asNumber: 64512
+  asNumber: 64513
 
 ---
 apiVersion: projectcalico.org/v3
@@ -22,4 +22,4 @@ metadata:
   name: bgppeer-worker2
 spec:
   peerIP: 192.168.0.12
-  asNumber: 64512
+  asNumber: 64513

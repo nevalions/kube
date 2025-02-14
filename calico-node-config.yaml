@@ -4,7 +4,7 @@ metadata:
   name: 4188479-cg67573
 spec:
   bgp:
-    asNumber: 64512
+    asNumber: 64513
     ipv4Address: 192.168.0.6/24
 
 ---
@@ -14,7 +14,7 @@ metadata:
   name: worker1
 spec:
   bgp:
-    asNumber: 64512
+    asNumber: 64513
     ipv4Address: 192.168.0.7/24
 
 ---
@@ -24,5 +24,5 @@ metadata:
   name: worker2
 spec:
   bgp:
-    asNumber: 64512
+    asNumber: 64513
     ipv4Address: 192.168.0.12/24
