@@ -11,6 +11,8 @@ spec:
     - name: default-ipv4-ippool
       blockSize: 26
       cidr: 10.244.0.0/16
+      ipipMode: Never
+      vxlanMode: Never
       encapsulation: None
       natOutgoing: Enabled
       nodeSelector: all()

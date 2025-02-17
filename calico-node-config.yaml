@@ -26,3 +26,23 @@ spec:
   bgp:
     asNumber: 64513
     ipv4Address: 192.168.0.12/24
+
+---
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  name: postgresnode
+spec:
+  bgp:
+    asNumber: 64513
+    ipv4Address: 192.168.0.8/24
+
+---
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  name: monitornode
+spec:
+  bgp:
+    asNumber: 64513
+    ipv4Address: 192.168.0.9/24

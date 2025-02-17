@@ -23,3 +23,21 @@ metadata:
 spec:
   peerIP: 192.168.0.12
   asNumber: 64513
+
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-postgresnode
+spec:
+  peerIP: 192.168.0.8
+  asNumber: 64513
+
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-monitornode
+spec:
+  peerIP: 192.168.0.9
+  asNumber: 64513

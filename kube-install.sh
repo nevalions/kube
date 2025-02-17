@@ -36,13 +36,13 @@ sysctl -p /etc/sysctl.conf
 # https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/
 # https://kubernetes.io/docs/setup/production-environment/container-runtimes/#cgroup-drivers
 sudo mkdir -p /etc/containerd/
-sudo containerd config default | sed -e "s#SystemdCgroup = false#SystemdCgroup = true#g" | tee /etc/containerd/config.toml
+sudo containerd config default | sed -e "s#SystemdCgroup = false#SystemdCgroup = true#g" | sudo tee /etc/containerd/config.toml
 
 sudo systemctl restart containerd
 
 # optionally set internal ip for worker and plane
 sudo tee /etc/default/kubelet <<EOF
-KUBELET_EXTRA_ARGS=--node-ip=192.168.0.6
+KUBELET_EXTRA_ARGS=--node-ip=192.168.0.9
 EOF
 
 # !!!only on plane node
@@ -65,8 +65,8 @@ sudo systemctl restart kubelet
 
 # !!!only on worker node
 # add worker nodes
-# kubeadm token generate
-# kubeadm token create ejr61c.v16chepuleltyqp9 --print-join-command --ttl=0
+# sudo kubeadm token generate
+# sudo kubeadm token create 4rsdz4.qnhsmdblab35f7xj --print-join-command --ttl=0
 sudo kubeadm join hash
 
 
