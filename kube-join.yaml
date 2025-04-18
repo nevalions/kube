@@ -11,3 +11,5 @@ nodeRegistration:
   kubeletExtraArgs:
     node-ip: 192.168.0.7
     hostname-override: worker1
+#kubeadm join 192.168.10.11:6443 --token xajpj6.myb4cb6wioonvb2c \
+#--discovery-token-ca-cert-hash sha256:d20e222602b161a0cc752129359ab492cdd766e7d8b99b0fb1e23474762be4c9

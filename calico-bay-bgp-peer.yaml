@@ -1,0 +1,42 @@
+# apiVersion: projectcalico.org/v3
+# kind: BGPPeer
+# metadata:
+#   name: bgppeer-external
+# spec:
+#   peerIP: 192.168.0.101
+#   asNumber: 64513
+
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-bay-worker1
+spec:
+  peerIP: 192.168.0.21
+  asNumber: 64513
+# ---
+# apiVersion: projectcalico.org/v3
+# kind: BGPPeer
+# metadata:
+#   name: bgppeer-worker2
+# spec:
+#   peerIP: 192.168.0.12
+#   asNumber: 64513
+#
+# ---
+# apiVersion: projectcalico.org/v3
+# kind: BGPPeer
+# metadata:
+#   name: bgppeer-postgresnode
+# spec:
+#   peerIP: 192.168.0.8
+#   asNumber: 64513
+#
+# ---
+# apiVersion: projectcalico.org/v3
+# kind: BGPPeer
+# metadata:
+#   name: bgppeer-monitornode
+# spec:
+#   peerIP: 192.168.0.9
+#   asNumber: 64513
