@@ -1,18 +1,57 @@
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bay-bgp-router
+spec:
+  peerIP: 192.168.10.241
+  asNumber: 64513
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-cloud-lb-wg
+spec:
+  peerIP: 10.0.9.3
+  asNumber: 64513
+# ---
 # apiVersion: projectcalico.org/v3
 # kind: BGPPeer
 # metadata:
-#   name: bgppeer-external
+#   name: bgppeer-cloud-lb
 # spec:
-#   peerIP: 192.168.0.101
-#   asNumber: 64513
-
+#   peerIP: 192.168.0.243
+#   asNumber: 64515
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-bay-lb
+spec:
+  peerIP: 192.168.10.105
+  asNumber: 64513
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-bay-plane1
+spec:
+  peerIP: 192.168.10.11
+  asNumber: 64513
 ---
 apiVersion: projectcalico.org/v3
 kind: BGPPeer
 metadata:
   name: bgppeer-bay-worker1
 spec:
-  peerIP: 192.168.0.21
+  peerIP: 192.168.10.21
+  asNumber: 64513
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bgppeer-bay-office-worker1
+spec:
+  peerIP: 192.168.10.31
   asNumber: 64513
 # ---
 # apiVersion: projectcalico.org/v3

@@ -7,6 +7,6 @@ spec:
   logSeverityScreen: Info
   nodeToNodeMeshEnabled: false
   serviceLoadBalancerIPs:
-    - cidr: 192.168.0.100/30
+    - cidr: 192.168.11.100/30
   serviceClusterIPs:
     - cidr: 10.96.0.0/16

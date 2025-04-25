@@ -1,0 +1,31 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "creationTimestamp": "2025-04-19T11:59:22Z",
+        "deletionTimestamp": "2025-04-24T07:36:50Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "calico-system",
+            "name": "calico-system",
+            "pod-security.kubernetes.io/enforce": "privileged",
+            "pod-security.kubernetes.io/enforce-version": "latest"
+        },
+        "name": "calico-system",
+        "ownerReferences": [
+            {
+                "apiVersion": "operator.tigera.io/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "Installation",
+                "name": "default",
+                "uid": "bbb4d99f-6fd0-4136-b7e3-caebb995f95f"
+            }
+        ],
+        "resourceVersion": "1098386",
+        "uid": "b75a91bd-baa2-44de-98a9-759c3289dbb8"
+    },
+    "spec": {},
+    "status": {
+        "phase": "Terminating"
+    }
+}
