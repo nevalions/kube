@@ -1,0 +1,24 @@
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration
+controlPlaneEndpoint: 192.168.10.11:6443
+etcd:
+  local:
+    serverCertSANs:
+      - "localhost"
+      - "127.0.0.1" 
+      - "192.168.10.11"
+      - "192.168.0.71"
+      - "192.168.0.243"
+      - "linroot-plane1"
+      - "cloud-plane-worker-longhorn1"
+    peerCertSANs:
+      - "localhost"
+      - "127.0.0.1"
+      - "192.168.10.11"
+      - "192.168.0.71" 
+      - "192.168.0.243"
+      - "linroot-plane1"
+      - "cloud-plane-worker-longhorn1"
+networking:
+  podSubnet: 10.244.0.0/16
+  serviceSubnet: 10.96.0.0/16

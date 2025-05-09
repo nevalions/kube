@@ -3,10 +3,11 @@ kind: BGPConfiguration
 metadata:
   name: default
 spec:
-  asNumber: 64513
+  asNumber: 64512
   logSeverityScreen: Info
   nodeToNodeMeshEnabled: false
   serviceLoadBalancerIPs:
-    - cidr: 192.168.10.101/30
+    - cidr: 192.168.11.100/30
+    # - cidr: 9.11.0.101/30
   serviceClusterIPs:
     - cidr: 10.96.0.0/16
