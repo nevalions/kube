@@ -7,14 +7,19 @@ metadata:
 spec:
   # Configures Calico networking.
   calicoNetwork:
+    nodeAddressAutodetectionV4:
+      # canReach: 8.8.8.8
+      interface: "wg99" # Specify your wireguard interface
     ipPools:
       - name: default-ipv4-ippool
         blockSize: 26
         cidr: 10.244.0.0/16
         # encapsulation: VXLANCrossSubnet
-        encapsulation: None
+        encapsulation: IPIP
+        # encapsulation: None
         natOutgoing: Enabled
         nodeSelector: all()
+    mtu: 1300
 
 # apiVersion: crd.projectcalico.org/v1
 # kind: FelixConfiguration
