@@ -1,0 +1,23 @@
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bay-bgp-router
+spec:
+  peerIP: 9.11.0.241
+  asNumber: 64513
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: caloud-bgp-router
+spec:
+  peerIP: 9.11.0.243
+  asNumber: 64514
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bay-bgp-worker1
+spec:
+  peerIP: 9.11.0.21
+  asNumber: 64512

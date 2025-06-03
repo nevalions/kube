@@ -1,0 +1,47 @@
+---
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: InitConfiguration
+nodeRegistration:
+  kubeletExtraArgs:
+    node-ip: 9.11.0.71
+
+---
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration
+controlPlaneEndpoint: "9.11.0.71:6443"
+apiServer:
+  extraArgs:
+    advertise-address: 9.11.0.71
+networking:
+  podSubnet: 10.244.0.0/16
+  serviceSubnet: 10.96.0.0/16
+  # controllerManager:
+#   extraArgs:
+#     bind-address: 0.0.0.0
+#     allocate-node-cidrs: "true"
+#     cluster-cidr: 192.168.0.0/16
+# scheduler:
+#   extraArgs:
+#     bind-address: 0.0.0.0
+#apiServer:
+#   certSANs:
+#     - 9.11.0.11 # bay-plane1
+#     - 9.11.0.12 # bay-plane2 (if joining later)
+#     - 9.11.0.21 # bay-worker1
+#     - 9.11.0.22 # bay-worker2
+#     - 9.11.0.31 # bay-office-worker1
+#     - 9.11.0.71 # cloud-plane-worker1
+#     - 9.11.0.241 # bay-bgp-router
+#     - 9.11.0.243 # cloud-haproxy
+#     # Add external load balancers or DNS names if needed
+# networking:
+#   podSubnet: 192.168.0.0/16 # for calico default
+#   serviceSubnet: 10.96.0.0/16
+# controllerManager:
+#   extraArgs:
+#     bind-address: 0.0.0.0
+#     allocate-node-cidrs: "true"
+#     cluster-cidr: 192.168.0.0/16
+# scheduler:
+#   extraArgs:
+#     bind-address: 0.0.0.0
