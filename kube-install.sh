@@ -26,8 +26,8 @@ modprobe br_netfilter
 modprobe overlay
 
 # enable packet forwarding, enable packets crossing a bridge are sent to iptables for processing
-echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-echo "net.bridge.bridge-nf-call-iptables=1" >> /etc/sysctl.conf
+echo "net.ipv4.ip_forward=1" >>/etc/sysctl.conf
+echo "net.bridge.bridge-nf-call-iptables=1" >>/etc/sysctl.conf
 sysctl -p /etc/sysctl.conf
 
 # return to user
@@ -58,7 +58,6 @@ kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/
 # Install Flannel as a Kubernetes CNI plugin using kubectl
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
-
 sudo systemctl daemon-reload && sudo systemctl restart kubelet && sudo systemctl restart containerd
 sudo systemctl restart containerd
 sudo systemctl restart kubelet
@@ -68,7 +67,6 @@ sudo systemctl restart kubelet
 # sudo kubeadm token generate
 # sudo kubeadm token create 4rsdz4.qnhsmdblab35f7xj --print-join-command --ttl=0
 sudo kubeadm join hash
-
 
 # Install helm
 curl -LO https://get.helm.sh/helm-v3.17.0-linux-amd64.tar.gz
@@ -99,7 +97,6 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/config/m
 #any
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.9/config/manifests/metallb-native.yaml
 
-
 kubectl get pods -n default -l app.kubernetes.io/name=ingress-nginx
 
 # Install Cert-Manager:
@@ -109,4 +106,3 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 
 # Install Metrics
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-
