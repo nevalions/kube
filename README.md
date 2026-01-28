@@ -2,6 +2,8 @@
 
 This repository contains Kubernetes manifests and configuration files for managing bare-metal clusters with kubeadm, Calico CNI, and BGP networking.
 
+**⚠️ Security Notice:** This is a public repository. See `SECURITY.md` for information about exposed infrastructure details and best practices.
+
 ## Overview
 
 This configuration supports:
@@ -242,6 +244,8 @@ When adding new configurations:
 
 ## Documentation
 
+- **SECURITY.md**: Security policy, exposed information, and incident response
 - **AGENTS.md**: Detailed guide for cluster access, validation, and style guidelines
+- **MANUAL_SETUP.md**: Step-by-step manual SSH SOCKS5 proxy setup
 - **Kubernetes Documentation**: https://kubernetes.io/docs/
 - **Calico Documentation**: https://docs.tigera.io/calico/

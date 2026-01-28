@@ -1,2 +1,41 @@
+# IDE and editor files
 .idea/
-kubernetes-ingress/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Kubernetes configuration files (sensitive)
+*.conf
+.kube/
+kubeconfig
+kubeconfig.*
+
+# Certificate and key files
+*.key
+*.pem
+*.crt
+*.csr
+secrets/
+.certs/
+ssl/
+
+# SSH keys
+id_rsa
+id_ed25519
+*.pub
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*.old
+
+# Generated files
+kube-join.yaml
+admin.conf
+
+# Package manager files
+node_modules/
+vendor/
+.DS_Store

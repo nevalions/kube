@@ -2,6 +2,30 @@
 
 This repository contains Kubernetes manifests and deployment scripts for cluster management.
 
+## Security Policy
+
+**This repository is PUBLIC** and contains infrastructure information. See `SECURITY.md` for detailed security considerations.
+
+### What to Know
+
+**Exposed information:**
+- Internal IP addresses and network topology
+- Server names and locations
+- Infrastructure patterns (Calico, BGP, MetalLB)
+
+**NOT exposed:**
+- Private keys or certificates
+- Passwords or authentication tokens
+- Actual kubeconfig files
+
+### Best Practices
+
+- Never commit `admin.conf` or kubeconfig files
+- Use environment variables for sensitive values
+- Replace example IPs with your own network ranges
+- Generate unique credentials (don't copy tokens)
+- See `SECURITY.md` for complete security guidelines
+
 ## Validation Commands
 
 ### YAML Syntax Validation
